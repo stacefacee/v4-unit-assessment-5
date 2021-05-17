@@ -4,6 +4,7 @@ import homeLogo from './../../assets/home_logo.png';
 import newLogo from './../../assets/new_logo.png';
 import logoutLogo from './../../assets/shut_down.png';
 import './Nav.css';
+import {Link, withRouter} from 'react-router-dom';
 
 class Nav extends Component {
   constructor(props) {
@@ -35,12 +36,12 @@ class Nav extends Component {
             <p>placeholder username</p>
           </div>
           <div className='nav-links'>
-            <img className='nav-img' src={homeLogo} alt='home' />
-            <img className='nav-img' src={newLogo} alt='new post' />
+            <Link to= '/Dash'><img className='nav-img' src={homeLogo} alt='home' /></Link>
+            <Link to= '/Form'><img className='nav-img' src={newLogo} alt='new post' /></Link>
           </div>
-          <img className='nav-img logout' src={logoutLogo} alt='logout' />
+          <Link to= '/Auth'><img className='nav-img logout' src={logoutLogo} alt='logout' onClick= 'logout()' /></Link>
         </div>
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
