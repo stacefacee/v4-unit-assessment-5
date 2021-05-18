@@ -37,7 +37,7 @@ module.exports = {
         }
       }
     },
-    createPost: (req, res) => {
+    createPost: async (req, res) => {
       const db =  req.app.get('db')
       let {id} = req.session.user;
       let {title, img, content} = req.body;
